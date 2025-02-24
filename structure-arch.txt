@@ -1,0 +1,43 @@
+news-recommender/
+│
+├── app/                         # Código principal da aplicação
+│   ├── __init__.py              # Inicialização do Flask
+│   ├── api.py                   # Endpoints da API
+│   ├── recommender.py           # Lógica do sistema de recomendação (SVD)
+│   ├── utils.py                 # Funções auxiliares (pré-processamento, etc.)
+│   ├── models/                  # Modelos salvos (SVD, ALS, etc.)
+│   │   └── svd_model.pkl        # Modelo SVD treinado
+│   ├── data_processing.py       # Funções de leitura e tratamento dos dados
+│   └── data/                    # Dados raw e pré-processados (dentro de app)
+│       ├── files/               # Dados brutos
+│       │   ├── treino/          # Arquivos de treino
+│       │   │   ├── treino-parte1.csv
+│       │   │   ├── treino-parte2.csv
+│       │   │   ├── treino-parte3.csv
+│       │   │   ├── treino-parte4.csv
+│       │   │   ├── treino-parte5.csv
+│       │   │   └── treino-parte6.csv
+│       │   └── itens/           # Dados dos itens
+│       │       ├── itens-parte1.csv
+│       │       ├── itens-parte2.csv
+│       │       └── itens-parte3.csv
+│       ├── validacao.csv        # Conjunto de validação
+│       └── popular_items.json   # Itens populares gerados
+│
+├── scripts/                     # Scripts auxiliares
+│   ├── train_svd.py             # Script para treinar o modelo SVD
+│   └── generate_popular.py      # Gera ranking de notícias populares
+│   
+│
+├── notebooks/                   # Jupyter notebooks para exploração e EDA
+│   └── eda.ipynb                # Análise exploratória dos dados
+│
+├── tests/                       # Testes unitários e de integração
+│   ├── test_api.py              # Testes para os endpoints da API
+│   └── test_recommender.py      # Testes para a lógica de recomendação
+│
+├── Dockerfile                   # Empacotamento com Docker
+├── docker-compose.yml           # Orquestração dos containers (Flask, etc.)
+├── requirements.txt             # Dependências do projeto
+├── README.md                    # Documentação geral do projeto
+└── run.py                       # Script para iniciar a API Flask
